@@ -36,7 +36,7 @@ void loop() {
 		case ADC_START:
 			digitalWrite(10, HIGH);   // trigger the sensor
 			digitalWrite(10, LOW);
-			timerev.add(ADC_END, 10*1000, 0, 1); // emit ADC_END after 10 ms (no need for waitting)
+			timerev.add(ADC_END, 10*1000, 0, 1); // emit ADC_END 10 ms later (no need for waitting)
 		break;
 
 		case ADC_END:

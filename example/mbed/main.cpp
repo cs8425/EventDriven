@@ -71,7 +71,7 @@ int main(void) {
             // do every 5 ms
             case ADC_START:
                 // ...
-                timerev.add(ADC_END, 10*1000, 0, 1); // emit ADC_END after 10 ms
+                timerev.add(ADC_END, 10*1000, 0, 1); // emit ADC_END 10 ms later
             break;
 
             // do when ADC_END emited
