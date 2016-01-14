@@ -3,15 +3,14 @@ A simple event driven system for microcontroller in C++.
 
 ## Setup
   1. define your event id
-```
+``` cpp
 #define ADC_START      1
 #define ADC_END        2
 #define LED            3
 #define DEBUG_PRINT    4
 ```
-
-  2. implement `uint32_t us_ticker_read()` return microseconds
-```
+  2. implement `uint32_t us_ticker_read()` which return microseconds
+``` cpp
 uint32_t us_ticker_read(){
 	return micros();
 }
@@ -19,7 +18,7 @@ uint32_t us_ticker_read(){
 
 ## Usage
 
-```
+``` cpp
 #include "EventDriven.h"
 #include "TimerEv.h"
 
