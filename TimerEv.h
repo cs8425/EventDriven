@@ -24,7 +24,7 @@ public:
     unsigned char slot[TIMER_SIZE];
     unsigned char status_map[TIMER_SIZE];
 
-    
+
     TimerEv(EventDriven &_evlp) {
         evlp = &_evlp;
         
@@ -96,7 +96,7 @@ public:
     }
     
     inline int available(void){
-        return (count) ? 0 : 1;
+        return (count < TIMER_SIZE) ? 1 : 0;
     }
     
     void tick(void) {
@@ -120,7 +120,9 @@ public:
         }
         if(mg) merge();
     }
-    
+
+
+protected:
     void merge(void) {
         uint16_t i;
         uint16_t dec = 0;
@@ -138,9 +140,6 @@ public:
         }
         count -= dec;
     }
-
-protected:
-
 
 };
 
